@@ -36,10 +36,9 @@ Example
 from tlbo_optimization.tlbo_optimization import TLBO
 
 def objective_function(x):
-    """Objective function to minimize."""
     return sum(x ** 2)
 
-# Initialize the TLBO algorithm with parameters
+
 tlbo = TLBO(
     population_size=30,
     dimensions=5,
@@ -49,11 +48,9 @@ tlbo = TLBO(
     obj_func=objective_function
 )
 
-# Run the optimization process
+
 best_solution, best_fitness = tlbo.optimize()
 
-# Output the results
 print(f"Best solution: {best_solution}")
 print(f"Best fitness: {best_fitness}")
 
-s

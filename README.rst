@@ -9,29 +9,51 @@ tlbo_optimization
 .. image:: https://img.shields.io/travis/smbd1368/tlbo_optimization.svg
         :target: https://travis-ci.com/smbd1368/tlbo_optimization
 
-.. image:: https://readthedocs.org/projects/tlbo-optimization/badge/?version=latest
-        :target: https://tlbo-optimization.readthedocs.io/en/latest/?version=latest
-        :alt: Documentation Status
-
-
 
 
 Teaching-Learning-Based Optimization (TLBO) algorithm
-
-
-* Free software: GNU General Public License v3
-* Documentation: https://tlbo-optimization.readthedocs.io.
-
-
-Features
+Overview
 --------
 
-* TODO
+The TLBO algorithm is a population-based optimization technique inspired by the teaching-learning process. This package provides an easy-to-use implementation of TLBO for optimizing various objective functions.
 
-Credits
--------
 
-This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
+Installation
+------------
 
-.. _Cookiecutter: https://github.com/audreyr/cookiecutter
-.. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
+You can install the package using pip:
+
+```bash
+pip install tlbo-optimization
+
+
+
+
+
+Example
+------------
+
+from tlbo_optimization.tlbo_optimization import TLBO
+
+def objective_function(x):
+    """Objective function to minimize."""
+    return sum(x ** 2)
+
+# Initialize the TLBO algorithm with parameters
+tlbo = TLBO(
+    population_size=30,
+    dimensions=5,
+    lower_bound=-10,
+    upper_bound=10,
+    max_iter=100,
+    obj_func=objective_function
+)
+
+# Run the optimization process
+best_solution, best_fitness = tlbo.optimize()
+
+# Output the results
+print(f"Best solution: {best_solution}")
+print(f"Best fitness: {best_fitness}")
+
+s
